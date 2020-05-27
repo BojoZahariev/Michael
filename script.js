@@ -1,5 +1,5 @@
 let topM = '';
-let leftM = '';
+let leftM = '300px';
 
 const lorry = document.querySelector('#lorry');
 
@@ -9,5 +9,5 @@ console.log(rect.top, rect.left);
 
 const btn = document.querySelector('#btn');
 btn.addEventListener('click', e => {
-  lorry.style.marginLeft = '300px';
+  lorry.style.marginLeft = leftM;
 });
