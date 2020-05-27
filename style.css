@@ -3,3 +3,7 @@
   top: 30px;
   left: 50px;
 }
+
+#lorry {
+  transition: all 2s;
+}
