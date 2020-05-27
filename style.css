@@ -1,9 +1,24 @@
-#bin {
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+#bin1 {
   position: absolute;
   top: 30px;
   left: 50px;
 }
 
+#bin2 {
+  position: absolute;
+  top: 30px;
+  left: 150px;
+}
+
 #lorry {
+  position: absolute;
   transition: all 2s;
+  top: 300px;
+  left: 50px;
 }
