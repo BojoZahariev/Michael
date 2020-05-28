@@ -5,24 +5,24 @@ let leftM = rect.left;
 */
 const lorry = document.querySelector('#lorry');
 
-const bin1 = document.querySelector('#bin1');
-const bin2 = document.querySelector('#bin2');
-const bin3 = document.querySelector('#bin3');
+const destination1 = document.querySelector('#destination1');
+const destination2 = document.querySelector('#destination2');
+const destination3 = document.querySelector('#destination3');
 
-bin1.addEventListener('click', e => {
-  var rect = bin1.getBoundingClientRect();
+destination1.addEventListener('click', e => {
+  var rect = destination1.getBoundingClientRect();
+  lorry.style.left = `${rect.left}px`;
+  lorry.style.top = `${rect.top}px`;
+});
+
+destination2.addEventListener('click', e => {
+  var rect = destination2.getBoundingClientRect();
   lorry.style.marginLeft = `${rect.left}px`;
   lorry.style.top = `${rect.top}px`;
 });
 
-bin2.addEventListener('click', e => {
-  var rect = bin2.getBoundingClientRect();
-  lorry.style.marginLeft = `${rect.left}px`;
-  lorry.style.top = `${rect.top}px`;
-});
-
-bin3.addEventListener('click', e => {
-  var rect = bin3.getBoundingClientRect();
+destination3.addEventListener('click', e => {
+  var rect = destination3.getBoundingClientRect();
   lorry.style.marginLeft = `${rect.left}px`;
   lorry.style.top = `${rect.top}px`;
 });

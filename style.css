@@ -4,28 +4,40 @@
   padding: 0;
 }
 
-.bins {
+.main {
+  background-color: #567d46;
+  background-size: cover;
+  height: 100vh;
+}
+
+.row {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
   position: absolute;
+  height: 100vh;
+  right: 100px;
 }
 
-#bin1 {
-  top: 30px;
-  left: 50px;
+.destinations {
+  width: 100px;
+  height: 100px;
+  margin: 20px;
+  border: 1px solid #222;
 }
 
-#bin2 {
-  top: 30px;
-  left: 350px;
+#destination1 {
 }
 
-#bin3 {
-  top: 230px;
-  left: 350px;
+#destination2 {
+}
+
+#destination3 {
 }
 
 #lorry {
   position: absolute;
   transition: all 5s;
-  top: 300px;
+  top: 50%;
   left: 50px;
 }
