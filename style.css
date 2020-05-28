@@ -4,21 +4,28 @@
   padding: 0;
 }
 
-#bin1 {
+.bins {
   position: absolute;
+}
+
+#bin1 {
   top: 30px;
   left: 50px;
 }
 
 #bin2 {
-  position: absolute;
   top: 30px;
-  left: 150px;
+  left: 350px;
+}
+
+#bin3 {
+  top: 230px;
+  left: 350px;
 }
 
 #lorry {
   position: absolute;
-  transition: all 2s;
+  transition: all 5s;
   top: 300px;
   left: 50px;
 }
