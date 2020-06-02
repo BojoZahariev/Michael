@@ -4,7 +4,8 @@ let leftM = rect.left;
 
 */
 let moved = false;
-const lorry = document.querySelector('#lorry');
+let match = false;
+const hero = document.querySelector('#hero');
 
 const destination1 = document.querySelector('#destination1');
 const destination2 = document.querySelector('#destination2');
@@ -13,8 +14,9 @@ const destination3 = document.querySelector('#destination3');
 destination1.addEventListener('click', e => {
   if (!moved) {
     var rect = destination1.getBoundingClientRect();
-    lorry.style.left = `${rect.left}px`;
-    lorry.style.top = `${rect.top}px`;
+    hero.style.left = `${rect.left}px`;
+    hero.style.top = `${rect.top}px`;
+
     moved = true;
   }
 });
@@ -22,17 +24,18 @@ destination1.addEventListener('click', e => {
 destination2.addEventListener('click', e => {
   if (!moved) {
     var rect = destination2.getBoundingClientRect();
-    lorry.style.marginLeft = `${rect.left}px`;
-    lorry.style.top = `${rect.top}px`;
+    hero.style.marginLeft = `${rect.left}px`;
+    hero.style.top = `${rect.top}px`;
     moved = true;
+    hero.classList.add('animatedMatch');
   }
 });
 
 destination3.addEventListener('click', e => {
   if (!moved) {
     var rect = destination3.getBoundingClientRect();
-    lorry.style.marginLeft = `${rect.left}px`;
-    lorry.style.top = `${rect.top}px`;
+    hero.style.marginLeft = `${rect.left}px`;
+    hero.style.top = `${rect.top}px`;
     moved = true;
   }
 });
