@@ -28,6 +28,7 @@ destination2.addEventListener('click', e => {
     hero.style.top = `${rect.top}px`;
     moved = true;
     hero.classList.add('animatedMatch');
+    destination2.classList.add('animatedTruckMatch');
   }
 });
 
