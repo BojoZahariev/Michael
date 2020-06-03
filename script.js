@@ -3,13 +3,25 @@ let topM = rect.top;
 let leftM = rect.left;
 
 */
-let moved = false;
-let match = false;
-const hero = document.querySelector('#hero');
 
 const destination1 = document.querySelector('#destination1');
 const destination2 = document.querySelector('#destination2');
 const destination3 = document.querySelector('#destination3');
+
+let moved = false;
+let match = destination2;
+const hero = document.querySelector('#hero');
+
+const checkMatch = vehicle => {
+  if (vehicle === match) {
+    var rect = vehicle.getBoundingClientRect();
+    hero.style.marginLeft = `${rect.left}px`;
+    hero.style.top = `${rect.top + 15}px`;
+    moved = true;
+    hero.classList.add('animatedMatch');
+    vehicle.classList.add('animatedTruckMatch');
+  }
+};
 
 destination1.addEventListener('click', e => {
   if (!moved) {
@@ -22,6 +34,8 @@ destination1.addEventListener('click', e => {
 });
 
 destination2.addEventListener('click', e => {
+  checkMatch(destination2);
+  /*
   if (!moved) {
     var rect = destination2.getBoundingClientRect();
     hero.style.marginLeft = `${rect.left}px`;
@@ -30,6 +44,7 @@ destination2.addEventListener('click', e => {
     hero.classList.add('animatedMatch');
     destination2.classList.add('animatedTruckMatch');
   }
+  */
 });
 
 destination3.addEventListener('click', e => {
