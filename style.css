@@ -10,44 +10,34 @@
   height: 100vh;
 }
 
-.row {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  float: right;
-  height: 100vh;
-  width: 300px;
-}
-
 .destinations {
   height: 15vh;
-
   border: 1px solid #222;
   position: absolute;
 }
 
 #destination1 {
-  top: 1%;
+  top: 6%;
   left: 70%;
 }
 
 #destination2 {
-  top: 17%;
+  top: 23%;
   left: 70%;
 }
 
 #destination3 {
-  top: 33%;
+  top: 40%;
   left: 70%;
 }
 
 #destination4 {
-  top: 49%;
+  top: 57%;
   left: 70%;
 }
 
 #destination5 {
-  top: 65%;
+  top: 74%;
   left: 70%;
 }
 
