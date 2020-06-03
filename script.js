@@ -16,7 +16,7 @@ destination1.addEventListener('click', e => {
     var rect = destination1.getBoundingClientRect();
     hero.style.left = `${rect.left}px`;
     hero.style.top = `${rect.top}px`;
-
+    hero.classList.add('animatedNoMatch');
     moved = true;
   }
 });
