@@ -25,7 +25,7 @@ destination2.addEventListener('click', e => {
   if (!moved) {
     var rect = destination2.getBoundingClientRect();
     hero.style.marginLeft = `${rect.left}px`;
-    hero.style.top = `${rect.top}px`;
+    hero.style.top = `${rect.top + 15}px`;
     moved = true;
     hero.classList.add('animatedMatch');
     destination2.classList.add('animatedTruckMatch');
