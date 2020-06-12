@@ -1,9 +1,3 @@
-/*
-let topM = rect.top;
-let leftM = rect.left;
-
-*/
-
 const destination1 = document.querySelector('#destination1');
 const destination2 = document.querySelector('#destination2');
 const destination3 = document.querySelector('#destination3');
@@ -27,7 +21,7 @@ const checkMatch = vehicle => {
     setTimeout(function() {
       moved = false;
       hero.classList.remove('animatedNoMatch');
-      hero.style.left = '100px';
+      hero.style.left = '10%';
       hero.style.top = '50%';
     }, 10000);
   }
@@ -48,19 +42,6 @@ const heroPosition = () => {
 destination1.addEventListener('click', e => {
   if (!moved) {
     checkMatch(destination1);
-    /*
-    var rect = destination1.getBoundingClientRect();
-    hero.style.left = `${rect.left}px`;
-    hero.style.top = `${rect.top}px`;
-    hero.classList.add('animatedNoMatch');
-    moved = true;
-    setTimeout(function() {
-      moved = false;
-      hero.classList.remove('animatedNoMatch');
-      hero.style.left = '100px';
-      hero.style.top = '50%';
-    }, 10000);
-    */
   }
 });
 
@@ -75,3 +56,18 @@ destination3.addEventListener('click', e => {
     checkMatch(destination3);
   }
 });
+
+shuffleArr = a => {
+  for (let i = a.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [a[i], a[j]] = [a[j], a[i]];
+  }
+
+  return a;
+};
+
+let allTrucks = [1, 2, 3];
+let shuffledTrucksCopy = [...allTrucks];
+let shuffledTrucks = this.shuffleArr(shuffledTrucksCopy);
+
+console.log(shuffledTrucks);
