@@ -34,24 +34,17 @@ destination1.addEventListener('click', e => {
 });
 
 destination2.addEventListener('click', e => {
-  checkMatch(destination2);
-  /*
   if (!moved) {
-    var rect = destination2.getBoundingClientRect();
-    hero.style.marginLeft = `${rect.left}px`;
-    hero.style.top = `${rect.top + 15}px`;
-    moved = true;
-    hero.classList.add('animatedMatch');
-    destination2.classList.add('animatedTruckMatch');
+    checkMatch(destination2);
   }
-  */
 });
 
 destination3.addEventListener('click', e => {
   if (!moved) {
     var rect = destination3.getBoundingClientRect();
-    hero.style.marginLeft = `${rect.left}px`;
+    hero.style.left = `${rect.left}px`;
     hero.style.top = `${rect.top}px`;
+    hero.classList.add('animatedNoMatch');
     moved = true;
   }
 });
