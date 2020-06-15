@@ -4,6 +4,28 @@ const destination3 = document.querySelector('#destination3');
 const destination4 = document.querySelector('#destination4');
 const destination5 = document.querySelector('#destination5');
 
+const destinations = document.getElementsByClassName('destinations');
+
+let allTrucks = [
+  { tag: 'ambulance', pic: 'images/ambulance.png' },
+  { tag: 'firetruck', pic: 'images/firetruck.png' },
+  { tag: 'policeCar', pic: 'images/policeCar.png' },
+  { tag: 'buldozer', pic: 'images/buldozer.png' },
+  { tag: 'tractor', pic: 'images/tractor.png' }
+];
+
+shuffleArr = a => {
+  for (let i = a.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [a[i], a[j]] = [a[j], a[i]];
+  }
+
+  return a;
+};
+
+let shuffledTrucksCopy = [...allTrucks];
+let shuffledTrucks = this.shuffleArr(shuffledTrucksCopy);
+
 let moved = false;
 let match = 'firetruck';
 const hero = document.querySelector('#hero');
@@ -41,6 +63,21 @@ const heroPosition = () => {
   }
 };
 
+for (i = 0; i < Array.from(destinations).length; i++) {
+  Array.from(destinations)[i].src = shuffledTrucks[i].pic;
+  Array.from(destinations)[i].tag = shuffledTrucks[i].tag;
+}
+
+Array.from(destinations).forEach(element => {
+  element.addEventListener('click', e => {
+    if (!moved) {
+      checkMatch(element);
+      console.log(element.tag);
+    }
+  });
+});
+
+/*
 destination1.addEventListener('click', e => {
   if (!moved) {
     checkMatch(destination1);
@@ -61,25 +98,9 @@ destination3.addEventListener('click', e => {
     console.log(destination3.tag);
   }
 });
+*/
 
-shuffleArr = a => {
-  for (let i = a.length - 1; i > 0; i--) {
-    const j = Math.floor(Math.random() * (i + 1));
-    [a[i], a[j]] = [a[j], a[i]];
-  }
-
-  return a;
-};
-
-let allTrucks = [
-  { tag: 'ambulance', pic: 'images/ambulance.png' },
-  { tag: 'firetruck', pic: 'images/firetruck.png' },
-  { tag: 'policeCar', pic: 'images/policeCar.png' },
-  { tag: 'buldozer', pic: 'images/buldozer.png' },
-  { tag: 'tractor', pic: 'images/tractor.png' }
-];
-let shuffledTrucksCopy = [...allTrucks];
-let shuffledTrucks = this.shuffleArr(shuffledTrucksCopy);
+/*
 
 destination1.src = shuffledTrucks[0].pic;
 destination1.tag = shuffledTrucks[0].tag;
@@ -91,5 +112,4 @@ destination4.src = shuffledTrucks[3].pic;
 destination4.tag = shuffledTrucks[3].tag;
 destination5.src = shuffledTrucks[4].pic;
 destination5.tag = shuffledTrucks[4].tag;
-
-console.log(shuffledTrucks);
+*/
