@@ -1,6 +1,8 @@
 const destination1 = document.querySelector('#destination1');
 const destination2 = document.querySelector('#destination2');
 const destination3 = document.querySelector('#destination3');
+const destination4 = document.querySelector('#destination4');
+const destination5 = document.querySelector('#destination5');
 
 let moved = false;
 let match = destination2;
@@ -48,6 +50,7 @@ destination1.addEventListener('click', e => {
 destination2.addEventListener('click', e => {
   if (!moved) {
     checkMatch(destination2);
+    console.log(destination1.src);
   }
 });
 
@@ -66,8 +69,15 @@ shuffleArr = a => {
   return a;
 };
 
-let allTrucks = [1, 2, 3];
+let allTrucks = ['images/ambulance.png', 'images/firetruck.png', 'images/policeCar.png', 'images/buldozer.png', 'images/tractor.png'];
 let shuffledTrucksCopy = [...allTrucks];
 let shuffledTrucks = this.shuffleArr(shuffledTrucksCopy);
 
+shuffledTrucks.forEach(element => {
+  destination1.src = shuffledTrucks[0];
+  destination2.src = shuffledTrucks[1];
+  destination3.src = shuffledTrucks[2];
+  destination4.src = shuffledTrucks[3];
+  destination5.src = shuffledTrucks[4];
+});
 console.log(shuffledTrucks);
