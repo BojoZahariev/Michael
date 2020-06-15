@@ -5,14 +5,14 @@ const destination4 = document.querySelector('#destination4');
 const destination5 = document.querySelector('#destination5');
 
 let moved = false;
-let match = destination2;
+let match = 'firetruck';
 const hero = document.querySelector('#hero');
 
 const checkMatch = vehicle => {
   let rect = vehicle.getBoundingClientRect();
   hero.style.left = `${rect.left}px`;
   hero.style.top = `${rect.top + 15}px`;
-  if (vehicle === match) {
+  if (vehicle.tag === match) {
     moved = true;
     hero.classList.add('animatedMatch');
     vehicle.classList.add('animatedTruckMatch');
@@ -44,19 +44,21 @@ const heroPosition = () => {
 destination1.addEventListener('click', e => {
   if (!moved) {
     checkMatch(destination1);
+    console.log(destination1.tag);
   }
 });
 
 destination2.addEventListener('click', e => {
   if (!moved) {
     checkMatch(destination2);
-    console.log(destination1.src);
+    console.log(destination2.tag);
   }
 });
 
 destination3.addEventListener('click', e => {
   if (!moved) {
     checkMatch(destination3);
+    console.log(destination3.tag);
   }
 });
 
@@ -69,15 +71,25 @@ shuffleArr = a => {
   return a;
 };
 
-let allTrucks = ['images/ambulance.png', 'images/firetruck.png', 'images/policeCar.png', 'images/buldozer.png', 'images/tractor.png'];
+let allTrucks = [
+  { tag: 'ambulance', pic: 'images/ambulance.png' },
+  { tag: 'firetruck', pic: 'images/firetruck.png' },
+  { tag: 'policeCar', pic: 'images/policeCar.png' },
+  { tag: 'buldozer', pic: 'images/buldozer.png' },
+  { tag: 'tractor', pic: 'images/tractor.png' }
+];
 let shuffledTrucksCopy = [...allTrucks];
 let shuffledTrucks = this.shuffleArr(shuffledTrucksCopy);
 
-shuffledTrucks.forEach(element => {
-  destination1.src = shuffledTrucks[0];
-  destination2.src = shuffledTrucks[1];
-  destination3.src = shuffledTrucks[2];
-  destination4.src = shuffledTrucks[3];
-  destination5.src = shuffledTrucks[4];
-});
+destination1.src = shuffledTrucks[0].pic;
+destination1.tag = shuffledTrucks[0].tag;
+destination2.src = shuffledTrucks[1].pic;
+destination2.tag = shuffledTrucks[1].tag;
+destination3.src = shuffledTrucks[2].pic;
+destination3.tag = shuffledTrucks[2].tag;
+destination4.src = shuffledTrucks[3].pic;
+destination4.tag = shuffledTrucks[3].tag;
+destination5.src = shuffledTrucks[4].pic;
+destination5.tag = shuffledTrucks[4].tag;
+
 console.log(shuffledTrucks);
