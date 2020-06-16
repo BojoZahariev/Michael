@@ -3,8 +3,12 @@ const destination2 = document.querySelector('#destination2');
 const destination3 = document.querySelector('#destination3');
 const destination4 = document.querySelector('#destination4');
 const destination5 = document.querySelector('#destination5');
+const hero = document.querySelector('#hero');
 
 const destinations = document.getElementsByClassName('destinations');
+
+let moved = false;
+let match = 'firetruck';
 
 let allTrucks = [
   { tag: 'ambulance', pic: 'images/ambulance.png' },
@@ -12,6 +16,14 @@ let allTrucks = [
   { tag: 'policeCar', pic: 'images/policeCar.png' },
   { tag: 'buldozer', pic: 'images/buldozer.png' },
   { tag: 'tractor', pic: 'images/tractor.png' }
+];
+
+let allHeros = [
+  { tag: 'ambulance', pic: 'images/doctor.png' },
+  { tag: 'firetruck', pic: 'images/fireman.png' },
+  { tag: 'policeCar', pic: 'images/officer.png' },
+  { tag: 'buldozer', pic: 'images/construction.png' },
+  { tag: 'tractor', pic: 'images/farmer.png' }
 ];
 
 shuffleArr = a => {
@@ -26,16 +38,17 @@ shuffleArr = a => {
 let shuffledTrucksCopy = [...allTrucks];
 let shuffledTrucks = this.shuffleArr(shuffledTrucksCopy);
 
-let moved = false;
-let match = 'firetruck';
-const hero = document.querySelector('#hero');
-hero.src = 'images/fireman.png';
+let shuffledHerosCopy = [...allHeros];
+let shuffledHeros = this.shuffleArr(shuffledHerosCopy);
+
+hero.src = shuffledHeros[0].pic;
+hero.tag = shuffledHeros[0].tag;
 
 const checkMatch = vehicle => {
   let rect = vehicle.getBoundingClientRect();
   hero.style.left = `${rect.left}px`;
-  hero.style.top = `${rect.top + 15}px`;
-  if (vehicle.tag === match) {
+  hero.style.top = `${rect.top - 20}px`;
+  if (vehicle.tag === hero.tag) {
     moved = true;
     hero.classList.add('animatedMatch');
     vehicle.classList.add('animatedTruckMatch');
@@ -77,40 +90,3 @@ Array.from(destinations).forEach(element => {
     }
   });
 });
-
-/*
-destination1.addEventListener('click', e => {
-  if (!moved) {
-    checkMatch(destination1);
-    console.log(destination1.tag);
-  }
-});
-
-destination2.addEventListener('click', e => {
-  if (!moved) {
-    checkMatch(destination2);
-    console.log(destination2.tag);
-  }
-});
-
-destination3.addEventListener('click', e => {
-  if (!moved) {
-    checkMatch(destination3);
-    console.log(destination3.tag);
-  }
-});
-*/
-
-/*
-
-destination1.src = shuffledTrucks[0].pic;
-destination1.tag = shuffledTrucks[0].tag;
-destination2.src = shuffledTrucks[1].pic;
-destination2.tag = shuffledTrucks[1].tag;
-destination3.src = shuffledTrucks[2].pic;
-destination3.tag = shuffledTrucks[2].tag;
-destination4.src = shuffledTrucks[3].pic;
-destination4.tag = shuffledTrucks[3].tag;
-destination5.src = shuffledTrucks[4].pic;
-destination5.tag = shuffledTrucks[4].tag;
-*/
