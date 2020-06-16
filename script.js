@@ -55,22 +55,30 @@ const checkMatch = vehicle => {
     hero.classList.add('animatedMatch');
     vehicle.classList.add('animatedTruckMatch');
 
-    setTimeout(function() {
-      moved = false;
-      hero.classList.remove('animatedMatch');
+    if (turn < 4) {
+      setTimeout(function() {
+        moved = false;
+        hero.classList.remove('animatedMatch');
+        hero.classList.remove('animatedNoMatch');
 
-      turn += 1;
-      hero.src = shuffledHeros[turn].pic;
-      hero.tag = shuffledHeros[turn].tag;
-      hero.style.left = '10%';
-      hero.style.top = '50%';
-    }, 14000);
+        turn += 1;
+
+        hero.src = shuffledHeros[turn].pic;
+        hero.tag = shuffledHeros[turn].tag;
+
+        hero.style.left = '10%';
+        hero.style.top = '50%';
+      }, 14000);
+    } else {
+      console.log('end');
+    }
   } else {
     moved = true;
     hero.classList.add('animatedNoMatch');
 
     setTimeout(function() {
       moved = false;
+      hero.classList.remove('animatedMatch');
       hero.classList.remove('animatedNoMatch');
       hero.style.left = '10%';
       hero.style.top = '50%';
@@ -99,7 +107,6 @@ Array.from(destinations).forEach(element => {
   element.addEventListener('click', e => {
     if (!moved) {
       checkMatch(element);
-      console.log(element.tag);
     }
   });
 });
