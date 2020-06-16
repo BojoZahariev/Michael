@@ -29,6 +29,7 @@ let shuffledTrucks = this.shuffleArr(shuffledTrucksCopy);
 let moved = false;
 let match = 'firetruck';
 const hero = document.querySelector('#hero');
+hero.src = 'images/fireman.png';
 
 const checkMatch = vehicle => {
   let rect = vehicle.getBoundingClientRect();
