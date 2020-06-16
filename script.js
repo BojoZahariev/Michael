@@ -7,8 +7,10 @@ const hero = document.querySelector('#hero');
 
 const destinations = document.getElementsByClassName('destinations');
 
-let moved = false;
-let match = 'firetruck';
+var moved = false;
+var turn = 0;
+
+//let match = 'firetruck';
 
 let allTrucks = [
   { tag: 'ambulance', pic: 'images/ambulance.png' },
@@ -52,6 +54,17 @@ const checkMatch = vehicle => {
     moved = true;
     hero.classList.add('animatedMatch');
     vehicle.classList.add('animatedTruckMatch');
+
+    setTimeout(function() {
+      moved = false;
+      hero.classList.remove('animatedMatch');
+
+      turn += 1;
+      hero.src = shuffledHeros[turn].pic;
+      hero.tag = shuffledHeros[turn].tag;
+      hero.style.left = '10%';
+      hero.style.top = '50%';
+    }, 14000);
   } else {
     moved = true;
     hero.classList.add('animatedNoMatch');
