@@ -4,7 +4,8 @@ const destination3 = document.querySelector('#destination3');
 const destination4 = document.querySelector('#destination4');
 const destination5 = document.querySelector('#destination5');
 const hero = document.querySelector('#hero');
-const prizeImg = document.querySelector('#prizeImg');
+const prize = document.querySelector('#prize');
+const reload = document.querySelector('#reload');
 
 const destinations = document.getElementsByClassName('destinations');
 
@@ -75,7 +76,7 @@ const checkMatch = vehicle => {
     } else {
       setTimeout(function() {
         win();
-      }, 5000);
+      }, 9000);
     }
   } else {
     moved = true;
@@ -105,7 +106,7 @@ Array.from(destinations).forEach(element => {
 });
 
 const win = () => {
-  prizeImg.style.display = 'block';
+  prize.style.display = 'block';
   confetti();
 };
 

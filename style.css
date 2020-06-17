@@ -96,7 +96,7 @@
   }
 }
 
-#prizeImg {
+#prize {
   position: absolute;
   width: 327px;
   top: 20%;
@@ -104,6 +104,27 @@
   right: 0;
   text-align: center;
   margin: auto;
+  display: none;
+}
+
+#reload {
+  outline: none;
+  cursor: pointer;
+  border: 2px solid #78b9e7;
+  padding: 10px 30px;
+  border-radius: 20px;
+  background-color: #124e78;
+  color: #ffc220;
+  font-family: 'Merriweather', serif;
+  font-size: 25px;
+  background-size: 200% auto;
+  box-shadow: 0 4px 6px rgba(50, 50, 93, 0.11), 0 1px 3px rgba(0, 0, 0, 0.08);
+  background-image: linear-gradient(to right, #124e78 0%, #78b9e7 50%, #124e78 100%);
+  transition: 0.5s;
+}
+
+#reload:hover {
+  background-position: right center;
 }
 
 canvas {
