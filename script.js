@@ -4,6 +4,7 @@ const destination3 = document.querySelector('#destination3');
 const destination4 = document.querySelector('#destination4');
 const destination5 = document.querySelector('#destination5');
 const hero = document.querySelector('#hero');
+const mes = document.querySelector('#mes');
 const prize = document.querySelector('#prize');
 const reload = document.querySelector('#reload');
 
@@ -49,11 +50,13 @@ hero.src = shuffledHeros[0].pic;
 hero.tag = shuffledHeros[0].tag;
 
 const checkMatch = vehicle => {
+  mes.style.display = 'none';
   let rect = vehicle.getBoundingClientRect();
   hero.classList.add('trans');
   hero.style.left = `${rect.left}px`;
   hero.style.top = `${rect.top - 20}px`;
   if (vehicle.tag === hero.tag) {
+    wellDone('Well Done, Michael!');
     moved = true;
     hero.classList.add('animatedMatch');
     vehicle.classList.add('animatedTruckMatch');
@@ -79,6 +82,7 @@ const checkMatch = vehicle => {
       }, 9000);
     }
   } else {
+    wellDone('Not that one');
     moved = true;
     hero.classList.add('animatedNoMatch');
 
@@ -106,8 +110,24 @@ Array.from(destinations).forEach(element => {
 });
 
 const win = () => {
+  mes.style.display = 'none';
   prize.style.display = 'block';
   confetti();
+};
+
+const promise1 = new Promise((resolve, reject) => {
+  resolve('Success!');
+});
+
+const wellDone = text => {
+  setTimeout(function() {
+    mes.style.display = 'block';
+    mes.textContent = text;
+  }, 4000);
+
+  setTimeout(function() {
+    mes.style.display = 'none';
+  }, 7000);
 };
 
 reload.addEventListener('click', e => {

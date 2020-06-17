@@ -96,6 +96,18 @@
   }
 }
 
+#mes {
+  position: absolute;
+  top: 40%;
+  left: 0;
+  right: 0;
+  margin: auto;
+  text-align: center;
+  font-family: 'Wendy One', sans-serif;
+  color: #0075c4;
+  font-size: 50px;
+}
+
 #prize {
   position: absolute;
   width: 327px;
@@ -115,7 +127,7 @@
   border-radius: 20px;
   background-color: #124e78;
   color: #ffc220;
-  font-family: 'Merriweather', serif;
+  font-family: 'Wendy One', sans-serif;
   font-size: 25px;
   background-size: 200% auto;
   box-shadow: 0 4px 6px rgba(50, 50, 93, 0.11), 0 1px 3px rgba(0, 0, 0, 0.08);
