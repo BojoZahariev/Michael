@@ -86,18 +86,6 @@ const checkMatch = vehicle => {
   }
 };
 
-const heroPosition = () => {
-  let rect = hero.getBoundingClientRect();
-  console.log(rect.left);
-  if (rect.left === 100) {
-    hero.classList.remove('animatedNoMatch');
-    console.log('ding');
-    return true;
-  } else {
-    return false;
-  }
-};
-
 for (i = 0; i < Array.from(destinations).length; i++) {
   Array.from(destinations)[i].src = shuffledTrucks[i].pic;
   Array.from(destinations)[i].tag = shuffledTrucks[i].tag;
