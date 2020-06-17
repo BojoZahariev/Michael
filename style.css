@@ -43,15 +43,20 @@
 
 #hero {
   position: absolute;
-  transition: all 5s;
+
   top: 50%;
   left: 10%;
   height: 150px;
 }
 
+.trans {
+  transition: all 5s;
+}
+
 .animatedMatch {
   animation-name: match;
   animation-duration: 6s;
+
   animation-fill-mode: forwards;
   animation-timing-function: ease-in;
 }
@@ -89,4 +94,22 @@
   100% {
     left: -500px;
   }
+}
+
+#prizeImg {
+  position: absolute;
+  width: 327px;
+  top: 20%;
+  left: 0;
+  right: 0;
+  text-align: center;
+  margin: auto;
+}
+
+canvas {
+  position: absolute;
+  overflow-y: hidden;
+  overflow-x: hidden;
+  width: 100%;
+  margin: 0;
 }
