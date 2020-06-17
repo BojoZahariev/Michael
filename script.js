@@ -127,7 +127,7 @@ const wellDone = text => {
 
   setTimeout(function() {
     mes.style.display = 'none';
-  }, 7000);
+  }, 10000);
 };
 
 reload.addEventListener('click', e => {
