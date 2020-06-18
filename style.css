@@ -14,6 +14,7 @@
   height: 15vh;
   position: absolute;
   cursor: pointer;
+  user-select: none;
 }
 
 #destination1 {
@@ -43,7 +44,7 @@
 
 #hero {
   position: absolute;
-
+  user-select: none;
   top: 50%;
   left: 10%;
   height: 150px;
@@ -106,6 +107,7 @@
   font-family: 'Wendy One', sans-serif;
   color: #0075c4;
   font-size: 50px;
+  user-select: none;
 }
 
 #prize {
