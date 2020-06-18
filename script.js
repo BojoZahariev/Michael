@@ -115,10 +115,6 @@ const win = () => {
   confetti();
 };
 
-const promise1 = new Promise((resolve, reject) => {
-  resolve('Success!');
-});
-
 const wellDone = text => {
   setTimeout(function() {
     mes.style.display = 'block';
